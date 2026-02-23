@@ -2,6 +2,7 @@ package com.back.domain.post.service;
 
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.repository.PostRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,14 @@ public class PostService {
 
         Post post = new Post(title,content);
         return postRepository.save(post);
+    }
+
+    @Transactional
+    public Post modify(Post post, String title, String content){
+
+        post.setTitle(title);
+        post.setContent(content);
+        return post;
     }
 
     public Optional<Post> findById(int id) {
