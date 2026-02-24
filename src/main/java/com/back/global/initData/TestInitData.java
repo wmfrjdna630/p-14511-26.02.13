@@ -18,8 +18,8 @@ public class TestInitData {
     ApplicationRunner testInitDataRunner() {
         return args -> {
 
-            postService.write("제목1", "내용1");
-            postService.write("제목2", "내용2");
+            postService.write(3, "제목1", "내용1");
+            postService.write(4, "제목2", "내용2");
 
             System.out.println("테스트 전용 데이터 생성 완료.");
         };

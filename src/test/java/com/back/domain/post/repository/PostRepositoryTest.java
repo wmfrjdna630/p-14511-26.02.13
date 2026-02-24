@@ -28,7 +28,7 @@ public class PostRepositoryTest {
 
     @Test
     void t2(){
-        Post post = new Post("제목3", "내용3");
+        Post post = new Post(5, "제목3", "내용3");
         postRepository.save(post);
 
         assertThat(post.getId()).isNotNull();
