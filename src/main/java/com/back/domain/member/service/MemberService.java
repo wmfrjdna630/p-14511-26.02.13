@@ -5,6 +5,8 @@ import com.back.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class MemberService {
@@ -18,5 +20,9 @@ public class MemberService {
         member.setNickname(nickname);
 
         return memberRepository.save(member);
+    }
+
+    public Optional<Member> findById(int id) {
+        return memberRepository.findById(id);
     }
 }
